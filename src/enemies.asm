@@ -14,17 +14,17 @@
 .const MAX_ENEMIES      = 5
 
 // Enemy data structure (8 bytes per enemy)
-.var enemy_active       = $C100  // Active flag (5 bytes)
-.var enemy_type         = $C105  // Enemy type (5 bytes)
-.var enemy_x            = $C10A  // X position (5 bytes)
-.var enemy_y            = $C10F  // Y position (5 bytes)
-.var enemy_health       = $C114  // Health points (5 bytes)
-.var enemy_state        = $C119  // AI state (5 bytes)
-.var enemy_timer        = $C11E  // Timer for AI (5 bytes)
-.var enemy_data         = $C123  // Extra data byte (5 bytes)
+.label enemy_active       = $C100  // Active flag (5 bytes)
+.label enemy_type         = $C105  // Enemy type (5 bytes)
+.label enemy_x            = $C10A  // X position (5 bytes)
+.label enemy_y            = $C10F  // Y position (5 bytes)
+.label enemy_health       = $C114  // Health points (5 bytes)
+.label enemy_state        = $C119  // AI state (5 bytes)
+.label enemy_timer        = $C11E  // Timer for AI (5 bytes)
+.label enemy_data         = $C123  // Extra data byte (5 bytes)
 
-.var spawn_counter      = $C150  // Spawn timer
-.var spawn_index        = $C151  // Current spawn table index
+.label spawn_counter      = $C150  // Spawn timer
+.label spawn_index        = $C151  // Current spawn table index
 
 // ============================================================================
 // SPAWN ENEMIES

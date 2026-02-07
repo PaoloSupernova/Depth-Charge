@@ -210,34 +210,45 @@ level_label:
 // ============================================================================
 
 calc_screen_addr:
-    stx ZP_TEMP2                // Save column
+    pha                         // Save row
+    stx ZP_TEMP2                // Save column in ZP_TEMP2 temporarily
     
-    // Multiply row by 40
-    sta ZP_TEMP1
+    // Multiply row (A) by 40
+    pla
+    pha
+    
+    // Multiply by 8
+    asl
+    asl
+    asl
+    tax                         // Save * 8 low byte in X
     lda #0
-    sta ZP_TEMP2
+    rol
+    tay                         // Save * 8 high byte in Y
     
-    // A * 40 = A * 32 + A * 8
-    lda ZP_TEMP1
+    // Get original, multiply by 32
+    pla
     asl
     asl
     asl
-    sta ZP_TEMP1                // A * 8
+    asl
+    asl
     
-    lda ZP_TEMP1
-    asl
-    asl                         // A * 32
+    // Add (original * 8) + (original * 32) = original * 40
+    stx ZP_TEMP1                // Store *8 low temporarily
     clc
-    adc ZP_TEMP1                // A * 40
-    sta ZP_TEMP1
+    adc ZP_TEMP1                // Add *8 low
+    sta ZP_TEMP1                // Result low byte
+    tya
+    adc #0
+    pha                         // Save high byte on stack
     
     // Add column offset
-    ldx ZP_TEMP2
-    txa
+    lda ZP_TEMP2                // Get saved column
     clc
     adc ZP_TEMP1
     sta ZP_TEMP1
-    lda #0
+    pla
     adc #0
     sta ZP_TEMP2
     

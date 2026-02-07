@@ -3,9 +3,9 @@
 // Horizontal scrolling engine and level loading
 // ============================================================================
 
-.var scroll_position    = $C200  // Current scroll position in level
-.var scroll_fine        = $C201  // Fine scroll value (0-7)
-.var level_column       = $C202  // Current column in level data
+.label scroll_position    = $C200  // Current scroll position in level
+.label scroll_fine        = $C201  // Fine scroll value (0-7)
+.label level_column       = $C202  // Current column in level data
 
 // ============================================================================
 // UPDATE SCROLL
@@ -125,23 +125,23 @@ scroll_col_loop:
 
 multiply_by_40:
     // Multiply A by 40, result in ZP_TEMP1 (lo) and ZP_TEMP2 (hi)
-    // 40 = 32 + 8
-    sta ZP_TEMP1
-    lda #0
-    sta ZP_TEMP2
+    // Save the input value
+    pha
     
     // Multiply by 8 (shift left 3 times)
-    lda ZP_TEMP1
     asl
-    rol ZP_TEMP2
     asl
-    rol ZP_TEMP2
     asl
-    rol ZP_TEMP2
-    sta ZP_TEMP1                // Now ZP_TEMP1:2 = A * 8
+    sta ZP_TEMP1
+    lda #0
+    rol
+    sta ZP_TEMP2
     
-    // Multiply by 32 (shift original left 5 times)
-    txa
+    // Get original value for multiply by 32
+    pla
+    pha
+    
+    // Multiply by 32 (shift left 5 times)
     asl
     asl
     asl
@@ -152,10 +152,11 @@ multiply_by_40:
     clc
     adc ZP_TEMP1
     sta ZP_TEMP1
-    lda ZP_TEMP2
-    adc #0
+    lda #0
+    adc ZP_TEMP2
     sta ZP_TEMP2
     
+    pla
     rts
 
 // ============================================================================

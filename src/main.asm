@@ -52,21 +52,21 @@ BasicUpstart(start)
 // ZERO PAGE VARIABLES
 // ============================================================================
 
-.var ZP_GAME_STATE       = $02
-.var ZP_FRAME_COUNTER    = $03
-.var ZP_SCROLL_X         = $04
-.var ZP_PLAYER_X         = $05
-.var ZP_PLAYER_Y         = $06
-.var ZP_PLAYER_OXYGEN    = $07
-.var ZP_LIVES            = $08
-.var ZP_LEVEL            = $09
-.var ZP_TEMP1            = $0A
-.var ZP_TEMP2            = $0B
+.label ZP_GAME_STATE       = $02
+.label ZP_FRAME_COUNTER    = $03
+.label ZP_SCROLL_X         = $04
+.label ZP_PLAYER_X         = $05
+.label ZP_PLAYER_Y         = $06
+.label ZP_PLAYER_OXYGEN    = $07
+.label ZP_LIVES            = $08
+.label ZP_LEVEL            = $09
+.label ZP_TEMP1            = $0A
+.label ZP_TEMP2            = $0B
 
 // Score (3 bytes, BCD)
-.var ZP_SCORE_LO         = $0C
-.var ZP_SCORE_MID        = $0D
-.var ZP_SCORE_HI         = $0E
+.label ZP_SCORE_LO         = $0C
+.label ZP_SCORE_MID        = $0D
+.label ZP_SCORE_HI         = $0E
 
 // ============================================================================
 // MAIN PROGRAM

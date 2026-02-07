@@ -44,11 +44,11 @@
 .const WAVE_GATE       = $01
 
 // Sound effect state
-.var sfx_active        = $C300
-.var sfx_type          = $C301
-.var sfx_counter       = $C302
-.var music_position    = $C303
-.var music_counter     = $C304
+.label sfx_active        = $C300
+.label sfx_type          = $C301
+.label sfx_counter       = $C302
+.label music_position    = $C303
+.label music_counter     = $C304
 
 // Sound effect types
 .const SFX_NONE        = 0

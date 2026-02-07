@@ -4,21 +4,21 @@
 // ============================================================================
 
 // Player state variables
-.var player_x = $C000
-.var player_y = $C001
-.var player_dx = $C002          // Delta X (velocity)
-.var player_dy = $C003          // Delta Y (velocity)
-.var player_invincible = $C004  // Invincibility counter
-.var player_anim_frame = $C005  // Animation frame (0-2)
-.var player_torpedoes = $C006   // Active torpedoes count
+.label player_x = $C000
+.label player_y = $C001
+.label player_dx = $C002          // Delta X (velocity)
+.label player_dy = $C003          // Delta Y (velocity)
+.label player_invincible = $C004  // Invincibility counter
+.label player_anim_frame = $C005  // Animation frame (0-2)
+.label player_torpedoes = $C006   // Active torpedoes count
 
 // Torpedo data (2 torpedoes max)
-.var torpedo1_active = $C010
-.var torpedo1_x = $C011
-.var torpedo1_y = $C012
-.var torpedo2_active = $C013
-.var torpedo2_x = $C014
-.var torpedo2_y = $C015
+.label torpedo1_active = $C010
+.label torpedo1_x = $C011
+.label torpedo1_y = $C012
+.label torpedo2_active = $C013
+.label torpedo2_x = $C014
+.label torpedo2_y = $C015
 
 // ============================================================================
 // READ JOYSTICK AND UPDATE PLAYER
