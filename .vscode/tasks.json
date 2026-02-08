@@ -1,0 +1,137 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🪟 Build (Windows PowerShell) - USE THIS IF Ctrl+Shift+B FAILS",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-ExecutionPolicy", "Bypass", "-File", "build.ps1"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🪟 Build (Windows CMD) - Alternative if PowerShell blocked",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": ["/c", "build.bat"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Depth Charge",
+      "type": "shell",
+      "command": "./build.sh",
+      "windows": {
+        "command": "powershell.exe -ExecutionPolicy Bypass -File build.ps1"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build with Make",
+      "type": "shell",
+      "command": "make",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Build",
+      "type": "shell",
+      "command": "make clean",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build and Run in VICE",
+      "type": "shell",
+      "command": "make run",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "dependsOn": ["Build Depth Charge"]
+    },
+    {
+      "label": "Manual Build with KickAssembler",
+      "type": "shell",
+      "command": "java",
+      "args": [
+        "-jar",
+        "${env:KICKASS_JAR}",
+        "src/main.asm",
+        "-o",
+        "build/depthcharge.prg",
+        "-showmem"
+      ],
+      "windows": {
+        "args": [
+          "-jar",
+          "KickAss.jar",
+          "src/main.asm",
+          "-o",
+          "build/depthcharge.prg",
+          "-showmem"
+        ]
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build with CMD (Windows)",
+      "type": "shell",
+      "command": "build.bat",
+      "windows": {
+        "command": "build.bat"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Show Project Structure",
+      "type": "shell",
+      "command": "tree -L 2 -I '.git' || find . -maxdepth 2 -not -path './.git/*' | sort",
+      "windows": {
+        "command": "powershell.exe -Command \"Get-ChildItem -Recurse -Depth 1 -Exclude .git | Select-Object FullName\""
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# Build artifacts
+build/
+*.prg
+*.d64
+*.t64
+
+# KickAssembler output
+*.vs
+*.sym
+
+# Emulator files
+*.vicerc
+vicerc
+
+# IDE files (keep .vscode/ config, exclude user settings)
+.vscode/settings.json
+.vscode/*.log
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/
+*.tmp
+*.bak

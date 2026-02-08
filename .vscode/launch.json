@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Depth Charge in VICE (x64sc)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "x64sc",
+      "args": [
+        "${workspaceFolder}/build/depthcharge.prg"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "Build Depth Charge",
+      "linux": {
+        "program": "/usr/bin/x64sc"
+      },
+      "osx": {
+        "program": "/Applications/Vice/x64sc.app/Contents/MacOS/x64sc"
+      },
+      "windows": {
+        "program": "C:\\Program Files\\VICE\\x64sc.exe"
+      }
+    },
+    {
+      "name": "Launch Depth Charge in VICE (x64 - fast)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "x64",
+      "args": [
+        "${workspaceFolder}/build/depthcharge.prg"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "Build Depth Charge",
+      "linux": {
+        "program": "/usr/bin/x64"
+      },
+      "osx": {
+        "program": "/Applications/Vice/x64.app/Contents/MacOS/x64"
+      },
+      "windows": {
+        "program": "C:\\Program Files\\VICE\\x64.exe"
+      }
+    }
+  ]
+}
