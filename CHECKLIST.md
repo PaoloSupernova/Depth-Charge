@@ -1,5 +1,17 @@
 # Setup Checklist for VS Code + KickAssembler + VICE
 
+## ⚠️ BRANCH CHECK - START HERE!
+
+**CRITICAL FIRST STEP:**
+- [ ] **Verify you're on the `copilot/implement-depth-charge-game` branch**
+  - Run: `git branch` (should show a * next to copilot/implement-depth-charge-game)
+  - If not, run: `git checkout copilot/implement-depth-charge-game`
+  - **If you only see README.md, you MUST switch branches!**
+
+See [BRANCH-INFO.md](BRANCH-INFO.md) for details.
+
+---
+
 ## ✅ Prerequisites Check
 
 Before you start, make sure you have:
@@ -18,9 +30,10 @@ Missing something? See [VSCODE-SETUP.md](VSCODE-SETUP.md) for download links.
 
 ### 1. Get the Repository
 - [ ] Open terminal/command prompt
-- [ ] Run: `git clone https://github.com/PaoloSupernova/Depth-Charge.git`
+- [ ] Run: `git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSupernova/Depth-Charge.git`
 - [ ] Run: `cd Depth-Charge`
 - [ ] Run: `code .` (opens in VS Code)
+- [ ] **VERIFY:** Run `ls -la src/` - you should see 8 .asm files
 
 ### 2. Configure VICE Path
 - [ ] In VS Code, open file: `.vscode/launch.json`

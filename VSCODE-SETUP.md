@@ -2,6 +2,28 @@
 
 This guide will help you set up, build, and test the Depth Charge C64 game in Visual Studio Code with KickAssembler and VICE emulator.
 
+## ⚠️ CRITICAL: Check Your Branch First!
+
+**Before you proceed, make sure you're on the correct branch!**
+
+The complete game implementation is on the **`copilot/implement-depth-charge-game`** branch. If you only see README.md, you're on the wrong branch.
+
+### Fix It Now:
+```bash
+# Check current branch
+git branch
+
+# If not on copilot/implement-depth-charge-game, switch to it:
+git checkout copilot/implement-depth-charge-game
+
+# Verify files are present
+ls -la src/
+```
+
+**For full branch details, see [BRANCH-INFO.md](BRANCH-INFO.md)**
+
+---
+
 ## Prerequisites
 
 Before you begin, ensure you have:
@@ -19,7 +41,8 @@ Before you begin, ensure you have:
 Open a terminal in VS Code (`` Ctrl+` `` or `Cmd+` `` on Mac) and run:
 
 ```bash
-git clone https://github.com/PaoloSupernova/Depth-Charge.git
+# Clone with the correct branch
+git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSupernova/Depth-Charge.git
 cd Depth-Charge
 ```
 

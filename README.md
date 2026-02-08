@@ -8,6 +8,26 @@
 
 ---
 
+## ⚠️ IMPORTANT: Only Seeing README.md?
+
+**The complete game code is on the `copilot/implement-depth-charge-game` branch!**
+
+If you just cloned the repository and only see this README, you need to switch branches:
+
+```bash
+git checkout copilot/implement-depth-charge-game
+```
+
+Or clone directly to the correct branch:
+
+```bash
+git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSupernova/Depth-Charge.git
+```
+
+**📖 Full explanation:** See [BRANCH-INFO.md](BRANCH-INFO.md) for details about why the code is on a feature branch.
+
+---
+
 ## 🎮 About
 
 **DEPTH CHARGE** is a complete, playable submarine warfare side-scroller written in 6502 assembly language for the Commodore 64. Inspired by classic 8-bit games like *Harrier Attack!*, you pilot a military submarine through hostile waters, battling enemy vessels, avoiding mines, and surviving intense boss encounters.

@@ -1,5 +1,26 @@
 # 🎮 How to Get Started with Depth Charge in VS Code
 
+## ⚠️ IMPORTANT: Branch Information First!
+
+**Are you seeing only README.md?** You need to be on the feature branch!
+
+The complete game code is on the **`copilot/implement-depth-charge-game`** branch, not `main`.
+
+### Quick Fix:
+```bash
+# If you already cloned:
+git checkout copilot/implement-depth-charge-game
+
+# Or clone with the correct branch:
+git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSupernova/Depth-Charge.git
+```
+
+**See [BRANCH-INFO.md](BRANCH-INFO.md) for full details.**
+
+Once you're on the correct branch, continue below! 👇
+
+---
+
 ## What You Asked For
 
 You said: *"I've got KickAssembler and VICE emulator set up in VS Code. Please instruct me on the process I need to follow to test this game."*

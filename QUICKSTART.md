@@ -1,10 +1,28 @@
 # Quick Start Guide - VS Code Setup
 
+## ⚠️ Important: Branch Information
+
+**Are you seeing only README.md?** The full code is on the `copilot/implement-depth-charge-game` branch!
+
+Switch branches:
+```bash
+git checkout copilot/implement-depth-charge-game
+```
+
+Or clone directly to the branch:
+```bash
+git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSupernova/Depth-Charge.git
+```
+
+See [BRANCH-INFO.md](BRANCH-INFO.md) for details.
+
+---
+
 ## 🚀 Get Started in 5 Minutes
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/PaoloSupernova/Depth-Charge.git
+git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSupernova/Depth-Charge.git
 cd Depth-Charge
 code .
 ```
