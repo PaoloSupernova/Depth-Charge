@@ -156,10 +156,13 @@ Edit `.vscode/launch.json` and update the `program` path to point to your VICE e
 2. Select "Build Depth Charge"
 3. Check the terminal output for success
 
+**Note for Windows users:** The build task automatically uses PowerShell (build.ps1) on Windows. No bash required!
+
 ### Method 2: Terminal Command
 
 Open terminal in VS Code and run:
 
+**Linux/macOS:**
 ```bash
 # Using build script
 ./build.sh
@@ -168,10 +171,30 @@ Open terminal in VS Code and run:
 make
 ```
 
+**Windows PowerShell:**
+```powershell
+# Using PowerShell build script
+.\build.ps1
+
+# Or using CMD batch file
+build.bat
+```
+
+**Windows with Git Bash/WSL:**
+```bash
+./build.sh
+```
+
 ### Method 3: Manual Build
 
+**All platforms:**
 ```bash
 java -jar /path/to/KickAss.jar src/main.asm -o build/depthcharge.prg
+```
+
+**Windows PowerShell:**
+```powershell
+java -jar .\KickAss.jar src\main.asm -o build\depthcharge.prg
 ```
 
 **Expected Output:**
@@ -283,8 +306,19 @@ While VS Code doesn't directly debug C64 assembly, you can:
 
 ### Common Issues
 
+**Issue: "bash is not recognized" (Windows)**
+- **Problem:** VS Code trying to run bash which isn't available in PowerShell
+- **Solution 1:** Use the updated build system - just press `Ctrl+Shift+B` (it now uses PowerShell automatically on Windows)
+- **Solution 2:** Run `.\build.ps1` directly in PowerShell terminal
+- **Solution 3:** Run `build.bat` in CMD terminal
+- **Alternative:** Install Git for Windows (includes Git Bash) or use WSL
+
 **Issue: "Build failed - KickAssembler not found"**
-- Solution: Check your KICKASS_JAR path or edit build.sh/Makefile
+- **Linux/macOS:** Check your KICKASS_JAR path or edit build.sh/Makefile
+- **Windows:** Ensure KickAss.jar is in the project directory, or set KICKASS_JAR environment variable:
+  ```powershell
+  $env:KICKASS_JAR = "C:\path\to\KickAss.jar"
+  ```
 
 **Issue: "VICE doesn't start"**
 - Solution: Update the path in `.vscode/launch.json`
@@ -297,6 +331,14 @@ While VS Code doesn't directly debug C64 assembly, you can:
 
 **Issue: "Compilation errors about undefined labels"**
 - Solution: Make sure all .asm files are in the `src/` directory
+
+**Issue: "PowerShell execution policy error" (Windows)**
+- **Problem:** PowerShell script execution is disabled
+- **Solution:** Run this in PowerShell as Administrator (one time):
+  ```powershell
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+  ```
+- **Or:** Use the build.bat file instead which doesn't have execution policy restrictions
 
 ---
 

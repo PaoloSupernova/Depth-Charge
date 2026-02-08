@@ -37,9 +37,23 @@ Edit `.vscode/launch.json` and update the path to your VICE executable:
 ### Step 3: Build the Game
 Press **`Ctrl+Shift+B`** (Windows/Linux) or **`Cmd+Shift+B`** (macOS)
 
+**Windows users:** This automatically uses PowerShell (no bash needed!)
+
 Or run in terminal:
+
+**Linux/macOS:**
 ```bash
 ./build.sh
+```
+
+**Windows PowerShell:**
+```powershell
+.\build.ps1
+```
+
+**Windows CMD:**
+```cmd
+build.bat
 ```
 
 ### Step 4: Run in VICE
@@ -114,14 +128,20 @@ Depth-Charge/
 
 ## 🐛 Common Issues
 
+**"bash is not recognized" (Windows)**  
+→ Use `Ctrl+Shift+B` (now uses PowerShell automatically) or run `.\build.ps1` or `build.bat`
+
 **"KickAssembler not found"**  
-→ Set `KICKASS_JAR` environment variable or edit `build.sh`
+→ Set `KICKASS_JAR` environment variable or ensure KickAss.jar is in project directory
 
 **"VICE doesn't start"**  
 → Update path in `.vscode/launch.json`
 
 **"No joystick input"**  
 → Configure Control Port 2 in VICE settings
+
+**"PowerShell execution policy" (Windows)**  
+→ Run `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` or use `build.bat`
 
 ---
 

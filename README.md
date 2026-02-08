@@ -133,29 +133,41 @@ The guide includes:
 - Build automation with keyboard shortcuts (Ctrl+Shift+B)
 - One-click launch in VICE (F5)
 - Debugging tips and troubleshooting
+- **Windows-native build support** (PowerShell/CMD - no bash needed!)
 
 ### Prerequisites
 - **KickAssembler** (KickAss.jar) - Download from [www.theweb.dk/KickAssembler](http://www.theweb.dk/KickAssembler/)
 - **Java Runtime Environment** (JRE) - To run KickAssembler
-- **Make** (optional) - For using the Makefile
+- **Make** (optional, Linux/macOS) - For using the Makefile
 
 ### Quick Build
 
-#### Using the build script:
+#### Linux/macOS:
 ```bash
 ./build.sh
 ```
 
-#### Using Make:
+#### Windows PowerShell:
+```powershell
+.\build.ps1
+```
+
+#### Windows CMD:
+```cmd
+build.bat
+```
+
+#### Using Make (Linux/macOS):
 ```bash
 make
 ```
 
-#### Manual build:
+#### Manual build (all platforms):
 ```bash
-mkdir -p build
 java -jar KickAss.jar src/main.asm -o build/depthcharge.prg
 ```
+
+**Windows users:** See [WINDOWS-TROUBLESHOOTING.md](WINDOWS-TROUBLESHOOTING.md) if you encounter issues.
 
 ### Build Output
 The build process generates:

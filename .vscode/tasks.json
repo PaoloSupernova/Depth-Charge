@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "./build.sh",
       "windows": {
-        "command": "bash ./build.sh"
+        "command": "powershell.exe -ExecutionPolicy Bypass -File build.ps1"
       },
       "group": {
         "kind": "build",
@@ -82,9 +82,26 @@
       "problemMatcher": []
     },
     {
+      "label": "Build with CMD (Windows)",
+      "type": "shell",
+      "command": "build.bat",
+      "windows": {
+        "command": "build.bat"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Show Project Structure",
       "type": "shell",
       "command": "tree -L 2 -I '.git' || find . -maxdepth 2 -not -path './.git/*' | sort",
+      "windows": {
+        "command": "powershell.exe -Command \"Get-ChildItem -Recurse -Depth 1 -Exclude .git | Select-Object FullName\""
+      },
       "group": "none",
       "presentation": {
         "reveal": "always",
