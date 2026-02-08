@@ -30,7 +30,17 @@ git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSuperno
 
 ## 🔴 WINDOWS USERS: Build Still Failing?
 
-**If you're getting "bash not recognized" error after updating:**
+### 🛑 STOP Trying to Use Bash!
+
+**Are you typing "bash" commands in the terminal?** You don't need bash on Windows!
+
+**👉 Instead, read this:** [STOP-DONT-USE-BASH.md](STOP-DONT-USE-BASH.md)
+
+**👉 Want to build RIGHT NOW?** [BUILD-NOW.md](BUILD-NOW.md) ← Copy-paste commands here!
+
+---
+
+### If you're getting "bash not recognized" in VS Code tasks:
 
 Your VS Code is using **cached old tasks**. Fix it in 5 seconds:
 
