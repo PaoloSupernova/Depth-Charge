@@ -28,6 +28,21 @@ git clone -b copilot/implement-depth-charge-game https://github.com/PaoloSuperno
 
 ---
 
+## 🔴 WINDOWS USERS: Build Still Failing?
+
+**If you're getting "bash not recognized" error after updating:**
+
+Your VS Code is using **cached old tasks**. Fix it in 5 seconds:
+
+1. Press **`Ctrl+Shift+P`**
+2. Type: **`Reload Window`**
+3. Press **Enter**
+4. Try **`Ctrl+Shift+B`** again
+
+**📖 Full fix guide:** [WINDOWS-USERS-READ-THIS.md](WINDOWS-USERS-READ-THIS.md)
+
+---
+
 ## 🎮 About
 
 **DEPTH CHARGE** is a complete, playable submarine warfare side-scroller written in 6502 assembly language for the Commodore 64. Inspired by classic 8-bit games like *Harrier Attack!*, you pilot a military submarine through hostile waters, battling enemy vessels, avoiding mines, and surviving intense boss encounters.

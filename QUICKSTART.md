@@ -39,6 +39,10 @@ Press **`Ctrl+Shift+B`** (Windows/Linux) or **`Cmd+Shift+B`** (macOS)
 
 **Windows users:** This automatically uses PowerShell (no bash needed!)
 
+**🔴 Still getting "bash not recognized"?** VS Code task cache issue!
+- Press `Ctrl+Shift+P` → Type `Reload Window` → Enter → Try again
+- Or use: `Ctrl+Shift+P` → `Tasks: Run Task` → `🪟 Build (Windows PowerShell)`
+
 Or run in terminal:
 
 **Linux/macOS:**

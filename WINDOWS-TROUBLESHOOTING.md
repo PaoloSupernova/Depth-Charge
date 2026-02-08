@@ -2,6 +2,31 @@
 
 This guide helps Windows users resolve common build issues with the Depth Charge C64 game.
 
+## 🔴 MOST COMMON: VS Code Task Cache Issue
+
+### 🚨 Error Still Happening After Updates?
+
+If you're still getting "bash not recognized" error even after pulling latest changes, **VS Code is using cached old tasks**.
+
+### ✅ QUICK FIX: Reload VS Code Window (5 seconds)
+
+1. Press **`Ctrl+Shift+P`** (or `F1`)
+2. Type: **`Reload Window`**
+3. Press **Enter**
+4. Try **`Ctrl+Shift+B`** again
+
+**This clears the task cache and loads the new Windows-compatible tasks.**
+
+### Alternative: Use Explicit Windows Task
+
+If reloading doesn't work:
+
+1. Press **`Ctrl+Shift+P`**
+2. Type: **`Tasks: Run Task`**
+3. Select: **`🪟 Build (Windows PowerShell)`**
+
+---
+
 ## 🔴 Problem: "bash is not recognized"
 
 ### Error Message
@@ -12,9 +37,15 @@ try again.
 ```
 
 ### Why This Happens
-The original build system assumed bash was available, but Windows PowerShell doesn't include bash by default.
+1. The original build system assumed bash was available
+2. Windows PowerShell doesn't include bash by default
+3. **OR** VS Code is using old cached task definitions (see above)
 
-### ✅ Solution 1: Use the Updated Build System (Recommended)
+### ✅ Solution 1: Reload VS Code (If Just Updated)
+
+**See "VS Code Task Cache Issue" section above** - this is the most common reason!
+
+### ✅ Solution 2: Use the Updated Build System
 
 The repository now includes Windows-native build scripts:
 

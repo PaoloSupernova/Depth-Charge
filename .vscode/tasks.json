@@ -2,6 +2,30 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "🪟 Build (Windows PowerShell) - USE THIS IF Ctrl+Shift+B FAILS",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-ExecutionPolicy", "Bypass", "-File", "build.ps1"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🪟 Build (Windows CMD) - Alternative if PowerShell blocked",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": ["/c", "build.bat"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Build Depth Charge",
       "type": "shell",
       "command": "./build.sh",
