@@ -101,6 +101,19 @@ After completing Level 8, the game loops with increased difficulty.
 
 ## 🛠️ Building the Game
 
+### 🚀 Quick Start for VS Code Users
+
+**Using VS Code with KickAssembler and VICE?** See our detailed guide:
+
+📖 **[VS Code Setup Guide (VSCODE-SETUP.md)](VSCODE-SETUP.md)** - Complete walkthrough  
+⚡ **[Quick Start (QUICKSTART.md)](QUICKSTART.md)** - Get running in 5 minutes
+
+The guide includes:
+- Step-by-step VS Code configuration
+- Build automation with keyboard shortcuts (Ctrl+Shift+B)
+- One-click launch in VICE (F5)
+- Debugging tips and troubleshooting
+
 ### Prerequisites
 - **KickAssembler** (KickAss.jar) - Download from [www.theweb.dk/KickAssembler](http://www.theweb.dk/KickAssembler/)
 - **Java Runtime Environment** (JRE) - To run KickAssembler

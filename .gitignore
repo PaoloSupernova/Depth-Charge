@@ -12,8 +12,9 @@ build/
 *.vicerc
 vicerc
 
-# IDE files
-.vscode/
+# IDE files (keep .vscode/ config, exclude user settings)
+.vscode/settings.json
+.vscode/*.log
 .idea/
 *.swp
 *.swo

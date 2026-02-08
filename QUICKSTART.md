@@ -1,0 +1,112 @@
+# Quick Start Guide - VS Code Setup
+
+## 🚀 Get Started in 5 Minutes
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/PaoloSupernova/Depth-Charge.git
+cd Depth-Charge
+code .
+```
+
+### Step 2: Configure VICE Path
+Edit `.vscode/launch.json` and update the path to your VICE executable:
+
+**Windows:** `"program": "C:\\Program Files\\VICE\\x64sc.exe"`  
+**macOS:** `"program": "/Applications/Vice/x64sc.app/Contents/MacOS/x64sc"`  
+**Linux:** `"program": "/usr/bin/x64sc"`
+
+### Step 3: Build the Game
+Press **`Ctrl+Shift+B`** (Windows/Linux) or **`Cmd+Shift+B`** (macOS)
+
+Or run in terminal:
+```bash
+./build.sh
+```
+
+### Step 4: Run in VICE
+Press **`F5`** to launch the game in VICE emulator
+
+Or run manually:
+```bash
+x64sc build/depthcharge.prg
+```
+
+### Step 5: Play!
+- **Movement:** Arrow keys (configure joystick in VICE if needed)
+- **Fire:** Space bar or Right Ctrl
+- **Pause:** RUN/STOP key
+
+---
+
+## 🎮 Controls Setup
+
+In VICE, configure joystick:
+1. Settings → Input devices → Control port settings
+2. Set **Control Port 2** to "Keyboard"
+3. Use arrow keys + Space to play
+
+---
+
+## 📝 Need More Help?
+
+See **[VSCODE-SETUP.md](VSCODE-SETUP.md)** for:
+- Detailed configuration instructions
+- Troubleshooting common issues
+- Advanced debugging tips
+- VS Code keyboard shortcuts
+
+---
+
+## ⚡ VS Code Shortcuts
+
+| Action | Shortcut |
+|--------|----------|
+| Build | `Ctrl+Shift+B` / `Cmd+Shift+B` |
+| Run | `F5` |
+| Terminal | ``Ctrl+` `` / ``Cmd+` `` |
+| Tasks | `Ctrl+Shift+P` → "Tasks: Run Task" |
+
+---
+
+## 🔧 Prerequisites Checklist
+
+- [ ] VS Code installed
+- [ ] KickAssembler (KickAss.jar) available
+- [ ] VICE emulator (x64 or x64sc) installed
+- [ ] Java Runtime Environment (for KickAssembler)
+- [ ] Git installed
+
+Missing something? See [VSCODE-SETUP.md](VSCODE-SETUP.md) for installation links.
+
+---
+
+## 📁 Project Structure
+
+```
+Depth-Charge/
+├── src/            # Assembly source code
+├── build/          # Compiled .prg file (generated)
+├── .vscode/        # VS Code configuration
+├── build.sh        # Build script
+└── Makefile        # Build automation
+```
+
+---
+
+## 🐛 Common Issues
+
+**"KickAssembler not found"**  
+→ Set `KICKASS_JAR` environment variable or edit `build.sh`
+
+**"VICE doesn't start"**  
+→ Update path in `.vscode/launch.json`
+
+**"No joystick input"**  
+→ Configure Control Port 2 in VICE settings
+
+---
+
+**Full documentation:** [VSCODE-SETUP.md](VSCODE-SETUP.md)  
+**Build guide:** [BUILDING.md](BUILDING.md)  
+**Game info:** [README.md](README.md)

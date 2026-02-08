@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Depth Charge",
+      "type": "shell",
+      "command": "./build.sh",
+      "windows": {
+        "command": "bash ./build.sh"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build with Make",
+      "type": "shell",
+      "command": "make",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Build",
+      "type": "shell",
+      "command": "make clean",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build and Run in VICE",
+      "type": "shell",
+      "command": "make run",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "dependsOn": ["Build Depth Charge"]
+    },
+    {
+      "label": "Manual Build with KickAssembler",
+      "type": "shell",
+      "command": "java",
+      "args": [
+        "-jar",
+        "${env:KICKASS_JAR}",
+        "src/main.asm",
+        "-o",
+        "build/depthcharge.prg",
+        "-showmem"
+      ],
+      "windows": {
+        "args": [
+          "-jar",
+          "KickAss.jar",
+          "src/main.asm",
+          "-o",
+          "build/depthcharge.prg",
+          "-showmem"
+        ]
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Show Project Structure",
+      "type": "shell",
+      "command": "tree -L 2 -I '.git' || find . -maxdepth 2 -not -path './.git/*' | sort",
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
